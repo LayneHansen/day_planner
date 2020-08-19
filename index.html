@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Work Day Scheduler</title>
+      </head>
+  
+  <body>
+    <div class ="row">
+
+        <div class="col-md-8">
+
+            <div class="card text-center bg-dark" id="header-card">
+                <div class="card-header" id="time-display"></div>
+
+                <div class="card-body">
+                  <h3 class="card-title">DAILY PLANNER</h3>
+                  <p class="card-text" id="name">Layne D. Hansen</p>
+                  <button class="btn btn-primary" id="next-event-button">Next Event</a>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-1">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">8:00</li>
+              <li class="list-group-item">9:00</li>
+              <li class="list-group-item">10:00</li>
+              <li class="list-group-item">11:00</li>
+              <li class="list-group-item">12:00</li>
+              <li class="list-group-item">1:00</li>
+              <li class="list-group-item">2:00</li>
+              <li class="list-group-item">3:00</li>
+              <li class="list-group-item">4:00</li>
+              <li class="list-group-item">5:00</li>
+              <li class="list-group-item"></li>
+            </ul>
+      
+        </div>
+
+        <div class="col-md-6" id="mid-col">
+
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Event"></textarea>
+              </div>
+
+        </div>
+
+        <div class="col-md-1" id="right-col">
+
+            <div class="btn-group-vertical">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn8">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn9">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn10">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn11">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn12">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn1">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn2">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn3">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn4">Save</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary" id="btn5">Save</button>
+                    </li>
+                  </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
