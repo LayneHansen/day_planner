@@ -1,65 +1,164 @@
 
 // TIME DISPLAY
 
+// const { momentProperties } = require("./moment");
+
+// const moment = require("./moment");
+
 var currentDay = moment();
-var displayDay = document.getElementById("time-display");
-displayDay.innerHTML = currentDay.format('LLLL');
+var momentDisplay = document.getElementById("time-display");
+momentDisplay.innerHTML = currentDay.format('LLLL');
 
 var field8Event;
 
 
+// TIME FUNCTIONS
 
-var field8 = document.querySelector("#text-area-1");
-// var field9 = document.querySelector("#text-area-2");
-// var field10 = document.querySelector("#text-area-3");
-// var field11 = document.querySelector("#text-area-4");
-// var field12 = document.querySelector("#text-area-5");
-// var field1 = document.querySelector("#text-area-6");
-// var field2 = document.querySelector("#text-area-7");
-// var field3 = document.querySelector("#text-area-8");
-// var field4 = document.querySelector("#text-area-9");
-// var field5 = document.querySelector("#text-area-10");
+// current date and time
+var timeNow = moment();
+
+// current hour integer used to compare with time blocks
+var timeNowInt = moment().format('h');
+console.log(timeNowInt); 
+
+// TIME BLOCK variables
+
+var timeBlock8 = parseInt($("#block-8").text().replace(/\D/g,));
+ timeBlock = moment.duration(1,"hour");
+ console.log(timeBlock);
 
 
-var button8 = document.querySelector("#btn8");
-// var button9 = document.querySelector("#btn9");
-// var button10 = document.querySelector("#btn10");
-// var button11 = document.querySelector("#btn11");
-// var button12 = document.querySelector("#btn12");
-// var button1 = document.querySelector("#btn1");
-// var button2 = document.querySelector("#btn2");
-// var button3 = document.querySelector("#btn3");
-// var button4 = document.querySelector("#btn4");
-// var button5 = document.querySelector("#btn5");
 
-// function fieldInput(type, message) {
-//     field8.innerText = message;
-//     localStorage.setItem("Event", type);
-    
+//  timeBlock9 = $("#block-9");
+//  console.log(timeBlock9);
+ 
+
+
+
+
+
+// var timeBlock8 = moment(8:00).add(1, "hour");
+// console.log(timeBlock8);
+
+// timeBlock = moment.duration(1, "hour");
+// console.log(timeBlock);
+
+// var timePast = timeNow > timePresent;
+
+// var timePresent = currentTimeBlock;
+
+// var timeFuture = timeNow < timePresent;
+
+// Create identifiable blocks of time that identify the 
+
+
+// var timeBlock8 = {
+//     let: start = '8:00:00'
+//     let: end = '8:59:59'
+// };
+
+
+
+
+
+
+
+// TEXT FIELDS
+
+// 8:00 FIELD
+
+$("#btn8").on("click", function() {
+    field8Event = $("#text-area-1").val();
+    localStorage.setItem("Event 8", field8Event);
+})
+
+$("#text-area-1").val(localStorage.getItem("Event 8"));
+
+// 9:00
+
+$("#btn9").on("click", function() {
+    field9Event = $("#text-area-2").val();
+    localStorage.setItem("Event 9", field9Event);
+})
+
+$("#text-area-2").val(localStorage.getItem("Event 9"));
+
+// 10:00 FIELD
+
+$("#btn10").on("click", function() {
+    field10Event = $("#text-area-3").val();
+    localStorage.setItem("Event 10", field10Event);
+})
+
+$("#text-area-3").val(localStorage.getItem("Event 10"));
+
+// 11: 00 FIELD
+
+$("#btn11").on("click", function() {
+    field11Event = $("#text-area-4").val();
+    localStorage.setItem("Event 11", field11Event);
+})
+
+$("#text-area-4").val(localStorage.getItem("Event 11"));
+
+// 12:00 FIELD
+
+$("#btn12").on("click", function() {
+    field12Event = $("#text-area-5").val();
+    localStorage.setItem("Event 12", field12Event);
+})
+
+$("#text-area-5").val(localStorage.getItem("Event 12"));
+
+// 1:00 FIELD
+
+$("#btn1").on("click", function() {
+    field1Event = $("#text-area-6").val();
+    localStorage.setItem("Event 1", field1Event);
+})
+
+$("#text-area-6").val(localStorage.getItem("Event 1"));
+
+// 2:00 FIELD
+
+$("#btn2").on("click", function() {
+    field2Event = $("#text-area-7").val();
+    localStorage.setItem("Event 2", field2Event);
+})
+
+$("#text-area-7").val(localStorage.getItem("Event 2"));
+
+// 3:00 FIELD
+
+$("#btn3").on("click", function() {
+    field3Event = $("#text-area-8").val();
+    localStorage.setItem("Event 3", field3Event);
+})
+
+$("#text-area-8").val(localStorage.getItem("Event 3"));
+
+// 4:00 FIELD
+
+$("#btn4").on("click", function() {
+    field4Event = $("#text-area-9").val();
+    localStorage.setItem("Event 4", field4Event);
+})
+
+$("#text-area-9").val(localStorage.getItem("Event 4"));
+
+
+
+
+
+
+
+
+
+// for (var i=1; i < 11; i++) {
+
+//     $("#text-area-" + i).val(localStorage.getItem());
+
 // }
-
-
-// BUTTON EVENTS
-
-button8.addEventListener('click', function () {
-    // console.log(button8);
-    
-    field8Event = field8.value;
-    // console.log(field8Event);
-    localStorage.setItem("Event", field8Event);
-    
-});
-
-field8.innerHTML = localStorage.getItem("Event");
-
-
-// $("btn8").on("click", function() {
-//     field8Event = field8.val;
-//     localStorage.setItem("Event", field8Event);
-
-// })
-
-// field8.innerHTML = localStorage.getItem("Event");
 
 
 // fieldInput();

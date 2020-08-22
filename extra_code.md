@@ -35,3 +35,27 @@
 
 // var date = new Date();
 // document.getElementById("time-display").innerText = date; -->
+
+<!-- // JQUERY
+
+// var button8 = $("#btn8");
+// var button9 = $("#btn9");
+// var button10 = $("#btn10");
+// var button11 = $("#btn11");
+// var button12 = $("#btn12");
+// var button1 = $("#btn1");
+// var button2 = $("#btn2");
+// var button3 = $("#btn3");
+// var button4 = $("#btn4");
+// var button5 = $("#btn5");
+
+// $("#btn8");
+// $("btn9");
+// $("btn10");
+// $("btn11");
+// $("btn12");
+// $("btn1");
+// $("btn2");
+// $("btn3");
+// $("btn4");
+// $("btn5"); -->
