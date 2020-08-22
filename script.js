@@ -36,10 +36,10 @@ var timeBlock9 = parseInt($("#block-9").text().replace(/\D/g,));
 var timeBlock10 = parseInt($("#block-10").text().replace(/\D/g,));
 var timeBlock11 = parseInt($("#block-11").text().replace(/\D/g,));
 var timeBlock12 = parseInt($("#block-12").text().replace(/\D/g,));
-var timeBlock1 = parseInt($("#block-1").text().replace(/\D/g,));
-var timeBlock2 = parseInt($("#block-2").text().replace(/\D/g,));
-var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,));
-var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,));
+var timeBlock1 = parseInt($("#block-1").text().replace(/\D/g,))+12;
+var timeBlock2 = parseInt($("#block-2").text().replace(/\D/g,))+12;
+var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,))+12;
+var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,))+12;
 
  
 // timeBlock = moment.duration(1,"hour");
