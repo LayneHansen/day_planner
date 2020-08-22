@@ -42,18 +42,6 @@ var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,))+12;
 var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,))+12;
 
  
-// timeBlock = moment.duration(1,"hour");
-// console.log(timeBlock);
-
-// function textAreaColor() {
-
-    
-    // }
-    
-    // textAreaColor();
-    // console.log(textAreaColor);
-    
-    
     
 // TEXT FIELDS, TEXT AND COLOR STATUS
     
@@ -189,7 +177,7 @@ if (timeNowInt > timeBlock1) {
 
 } else if (timeNowInt < timeBlock1) {
     // change color of text-area-1 to green
-    $("#text-area-").addClass('future');
+    $("#text-area-6").addClass('future');
 
 }
 
