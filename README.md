@@ -12,7 +12,7 @@ I was required to provide a place for the user to type tasks. The text would be 
 
 Below is a screenshot of the application.
 
-![main page](./coding_quiz.png)
+![Day Planner Screenshot](./day_planner_screenshot.png)
 
 ##### URL
 
