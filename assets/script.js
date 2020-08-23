@@ -52,6 +52,7 @@ function setTextToLS (buttonSelector, lsKey, textArea) {
 }
 
 
+
 // FUNCTION THAT GETS TEXT TO LOCAL STORAGE
 
 
