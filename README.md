@@ -8,7 +8,7 @@ The purpose of this application is to provide a text area to place tasks within 
 
 ### REQUIREMENTS
 
-I was required to provide a place for the user to type tasks. The text would be stored in local storage and retrieved onto the text area and stay after the page had refreshed. The color coding scheme was also required. This is a quick and easy 
+I was required to provide a place for the user to type tasks. The text would be stored in local storage and retrieved onto the text area and stay after the page had refreshed. The color coding scheme was also required. This is a quick and easy way to see what tasks or events are set for the day, which are in the past, and which are still upcoming.
 
 Below is a screenshot of the application.
 
