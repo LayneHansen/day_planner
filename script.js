@@ -9,82 +9,159 @@ var currentDay = moment();
 var momentDisplay = document.getElementById("time-display");
 momentDisplay.innerHTML = currentDay.format('LLLL');
 
-// TEXT FIELD VARIABLES
-
-var field8Event = $('#text-area-1');
-var field9Event = $('#text-area-2');
-var field10Event = $('#text-area-3');
-var field11Event = $('#text-area-4');
-var field12Event = $('#text-area-5');
-var field1Event = $('#text-area-6');
-var field2Event = $('#text-area-7');
-var field3Event = $('#text-area-8');
-var field4Event = $('#text-area-9');
-
-
-
 // TIME FUNCTIONS
 
 // current hour integer used to compare with time blocks
+
 var timeNowInt = moment().format('H');
-console.log(timeNowInt); 
+
+
+// TEXT FIELD VARIABLES
+
+// var field8Event = $('#text-area-1');
+// var field9Event = $('#text-area-2');
+// var field10Event = $('#text-area-3');
+// var field11Event = $('#text-area-4');
+// var field12Event = $('#text-area-5');
+// var field1Event = $('#text-area-6');
+// var field2Event = $('#text-area-7');
+// var field3Event = $('#text-area-8');
+// var field4Event = $('#text-area-9');
+
+
+// var timeNowInt = 7;
+// console.log(timeNowInt); 
+
 
 // TIME BLOCK variables
 
-var timeBlock8 = parseInt($("#block-8").text().replace(/\D/g,));
-var timeBlock9 = parseInt($("#block-9").text().replace(/\D/g,));
-var timeBlock10 = parseInt($("#block-10").text().replace(/\D/g,));
-var timeBlock11 = parseInt($("#block-11").text().replace(/\D/g,));
-var timeBlock12 = parseInt($("#block-12").text().replace(/\D/g,));
-var timeBlock1 = parseInt($("#block-1").text().replace(/\D/g,))+12;
-var timeBlock2 = parseInt($("#block-2").text().replace(/\D/g,))+12;
-var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,))+12;
-var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,))+12;
+// var timeBlock8 = parseInt($("#block-8").text().replace(/\D/g,));
+// var timeBlock9 = parseInt($("#block-9").text().replace(/\D/g,));
+// var timeBlock10 = parseInt($("#block-10").text().replace(/\D/g,));
+// var timeBlock11 = parseInt($("#block-11").text().replace(/\D/g,));
+// var timeBlock12 = parseInt($("#block-12").text().replace(/\D/g,));
+// var timeBlock1 = parseInt($("#block-1").text().replace(/\D/g,))+12;
+// var timeBlock2 = parseInt($("#block-2").text().replace(/\D/g,))+12;
+// var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,))+12;
+// var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,))+12;
 
- 
-    
-// TEXT FIELDS, TEXT AND COLOR STATUS
-    
-// 8:00 FIELD
-    
-$("#btn8").on("click", function() {
-    field8Event = $("#text-area-1").val();
-    localStorage.setItem("Event 8", field8Event);
-})
-    
-$("#text-area-1").val(localStorage.getItem("Event 8"));
-    
-if (timeNowInt > timeBlock8) {
-    // change color of text-area-1 to gray
-    $("#text-area-1").addClass('past');
-    
-} else if (timeNowInt === timeBlock8) {
-    // change color of  text-area-1 to white
-     $("#text-area-1").addClass('present');
-    
-} else if (timeNowInt < timeBlock8) {
-    // change color of text-area-1 to green
-    $("#text-area-1").addClass('future');
+// FUNCTION CREATES INTEGER USED TO COMPARE MOMENTJS TIME
+
+function timeOutOfBlock (eventTime, ifMilitaryTime) {
+
+    var timeBlock = parseInt($(eventTime).text().replace(/\D/g,));
+    if (ifMilitaryTime) {
+        timeBlock += 12;
+    }
+    return timeBlock;
+
 }
+
+// FUNCTION CREATES VARIABLES FOR TEXT ENTERED INTO TEXT AREAS
+
+function textAreaEvent (eventText) {
+
+    var textField = $(eventText);
+    return textField.val();
+
+}
+
+// CLICK FUNCTION
+
+
+// FUNCTION THAT SETS TEXT TO LOCAL STORAGE
+
+function setTextToLS (buttonSelector, lsKey, textArea) {
+    $(buttonSelector).on("click", function() {
+        localStorage.setItem(lsKey, textAreaEvent(textArea));
+    })
+
+}
+
+setTextToLS("#btn9", "Event 9", "#text-area-2");
+setTextToLS("#btn10", "Event 10", "#text-area-3");
+setTextToLS("#btn11", "Event 11", "#text-area-4");
+setTextToLS("#btn12", "Event 12", "#text-area-5");
+setTextToLS("#btn1", "Event 1", "#text-area-6");
+setTextToLS("#btn2", "Event 2", "#text-area-7");
+setTextToLS("#btn3", "Event 3", "#text-area-8");
+setTextToLS("#btn4", "Event 4", "#text-area-9");
+
+// FUNCTION THAT GETS TEXT TO LOCAL STORAGE
+
+
+// TEXT FIELDS, TEXT AND COLOR STATUS
+
+function timeCompare (timeBlockSelector, textAreaSelector, ifMilitaryTime) {
+
+    if (timeNowInt > timeOutOfBlock(timeBlockSelector, ifMilitaryTime)) {
+        // change color of text-area-1 to gray
+        $(textAreaSelector).addClass('past');
+        
+    } else if (timeNowInt === timeOutOfBlock(timeBlockSelector, ifMilitaryTime)) {
+        // change color of  text-area-1 to white
+         $(textAreaSelector).addClass('present');
+        
+    } else if (timeNowInt < timeOutOfBlock(timeBlockSelector, ifMilitaryTime)) {
+        // change color of text-area-1 to green
+        $(textAreaSelector).addClass('future');
+    }
+
+}
+
+timeCompare("#block-9", "#text-area-2", false);
+timeCompare("#block-10", "#text-area-3", false);
+timeCompare("#block-11", "#text-area-4", false);
+timeCompare("#block-12", "#text-area-5", false);
+timeCompare("#block-1", "#text-area-6", true);
+timeCompare("#block-2", "#text-area-7", true);
+timeCompare("#block-3", "#text-area-8", true);
+timeCompare("#block-4", "#text-area-9", true);
+
+
+
+
+
+// 8:00 FIELD
+
+// $("#btn8").on("click", function() {
+    //     localStorage.setItem("Event 8", textAreaEve8nt("#text-area-1"));
+    // })
+    
+setTextToLS("#btn8", "Event 8", "#text-area-1");
+$("#text-area-1").val(localStorage.getItem("Event 8"));
+timeCompare("#block-8", "#text-area-1", false);
+    
+// if (timeNowInt > timeOutOfBlock("#block-8", false)) {
+//     // change color of text-area-1 to gray
+//     $("#text-area-1").addClass('past');
+    
+// } else if (timeNowInt === timeOutOfBlock("#block-8", false)) {
+//     // change color of  text-area-1 to white
+//      $("#text-area-1").addClass('present');
+    
+// } else if (timeNowInt < timeOutOfBlock("#block-8", false)) {
+//     // change color of text-area-1 to green
+//     $("#text-area-1").addClass('future');
+// }
 
 // 9:00
 
 $("#btn9").on("click", function() {
-    field9Event = $("#text-area-2").val();
-    localStorage.setItem("Event 9", field9Event);
+    localStorage.setItem("Event 9", textAreaEvent("#text-area-2"));
 })
 
 $("#text-area-2").val(localStorage.getItem("Event 9"));
 
-if (timeNowInt > timeBlock9) {
+if (timeNowInt > timeOutOfBlock("#block-9")) {
     // change color of text-area-1 to gray
     $("#text-area-2").addClass('past');
 
-} else if (timeNowInt === timeBlock9) {
+} else if (timeNowInt === timeOutOfBlock("#block-9")) {
     // change color of  text-area-1 to white
     $("#text-area-2").addClass('present');
 
-} else if (timeNowInt < timeBlock9) {
+} else if (timeNowInt < timeOutOfBlock("#block-9")) {
     // change color of text-area-1 to green
     $("#text-area-2").addClass('future');
 }
@@ -98,15 +175,15 @@ $("#btn10").on("click", function() {
 
 $("#text-area-3").val(localStorage.getItem("Event 10"));
 
-if (timeNowInt > timeBlock10) {
+if (timeNowInt > timeOutOfBlock("#block-10")) {
     // change color of text-area-1 to gray
     $("#text-area-3").addClass('past');
 
-} else if (timeNowInt === timeBlock10) {
+} else if (timeNowInt === timeOutOfBlock("#block-10")) {
     // change color of  text-area-1 to white
     $("#text-area-3").addClass('present');
 
-} else if (timeNowInt < timeBlock10) {
+} else if (timeNowInt < timeOutOfBlock("#block-10")) {
     // change color of text-area-1 to green
     $("#text-area-3").addClass('future');
 
@@ -121,15 +198,15 @@ $("#btn11").on("click", function() {
 
 $("#text-area-4").val(localStorage.getItem("Event 11"));
 
-if (timeNowInt > timeBlock11) {
+if (timeNowInt > timeOutOfBlock("#block-11")) {
     // change color of text-area-1 to gray
     $("#text-area-4").addClass('past');
 
-} else if (timeNowInt === timeBlock11) {
+} else if (timeNowInt === timeOutOfBlock("#block-11")) {
     // change color of  text-area-1 to white
     $("#text-area-4").addClass('present');
 
-} else if (timeNowInt < timeBlock11) {
+} else if (timeNowInt < timeOutOfBlock("#block-11")) {
     // change color of text-area-1 to green
     $("#text-area-4").addClass('future');
 
@@ -144,15 +221,15 @@ $("#btn12").on("click", function() {
 
 $("#text-area-5").val(localStorage.getItem("Event 12"));
 
-if (timeNowInt > timeBlock12) {
+if (timeNowInt > timeOutOfBlock("#block-12")) {
     // change color of text-area-1 to gray
     $("#text-area-5").addClass('past');
 
-} else if (timeNowInt === timeBlock12) {
+} else if (timeNowInt === timeOutOfBlock("#block-12")) {
     // change color of  text-area-1 to white
     $("#text-area-5").addClass('present');
 
-} else if (timeNowInt < timeBlock12) {
+} else if (timeNowInt < timeOutOfBlock("#block-12")) {
     // change color of text-area-1 to green
     $("#text-area-5").addClass('future');
 
@@ -167,15 +244,15 @@ $("#btn1").on("click", function() {
 
 $("#text-area-6").val(localStorage.getItem("Event 1"));
 
-if (timeNowInt > timeBlock1) {
+if (timeNowInt > timeOutOfBlock("#block-1", true)) {
     // change color of text-area-1 to gray
     $("#text-area-6").addClass('past');
 
-} else if (timeNowInt === timeBlock1) {
+} else if (timeNowInt === timeOutOfBlock("#block-1", true)) {
     // change color of  text-area-1 to white
     $("#text-area-6").addClass('present');
 
-} else if (timeNowInt < timeBlock1) {
+} else if (timeNowInt < timeOutOfBlock("#block-1", true)) {
     // change color of text-area-1 to green
     $("#text-area-6").addClass('future');
 
@@ -190,15 +267,15 @@ $("#btn2").on("click", function() {
 
 $("#text-area-7").val(localStorage.getItem("Event 2"));
 
-if (timeNowInt > timeBlock2) {
+if (timeNowInt > timeOutOfBlock("#block-2")) {
     // change color of text-area-1 to gray
     $("#text-area-7").addClass('past');
 
-} else if (timeNowInt === timeBlock2) {
+} else if (timeNowInt === timeOutOfBlock("#block-2")) {
     // change color of  text-area-1 to white
     $("#text-area-7").addClass('present');
 
-} else if (timeNowInt < timeBlock2) {
+} else if (timeNowInt < timeOutOfBlock("#block-2")) {
     // change color of text-area-1 to green
     $("#text-area-7").addClass('future');
 
@@ -213,15 +290,15 @@ $("#btn3").on("click", function() {
 
 $("#text-area-8").val(localStorage.getItem("Event 3"));
 
-if (timeNowInt > timeBlock3) {
+if (timeNowInt > timeOutOfBlock("#block-3")) {
     // change color of text-area-1 to gray
     $("#text-area-8").addClass('past');
 
-} else if (timeNowInt === timeBlock3) {
+} else if (timeNowInt === timeOutOfBlock("#block-3")) {
     // change color of  text-area-1 to white
     $("#text-area-8").addClass('present');
 
-} else if (timeNowInt < timeBlock3) {
+} else if (timeNowInt < timeOutOfBlock("#block-3")) {
     // change color of text-area-1 to green
     $("#text-area-8").addClass('future');
 
@@ -236,15 +313,15 @@ $("#btn4").on("click", function() {
 
 $("#text-area-9").val(localStorage.getItem("Event 4"));
 
-if (timeNowInt > timeBlock4) {
+if (timeNowInt > timeOutOfBlock("#block-4")) {
     // change color of text-area-1 to gray
     $("#text-area-9").addClass('past');
 
-} else if (timeNowInt === timeBlock4) {
+} else if (timeNowInt === timeOutOfBlock("#block-4")) {
     // change color of  text-area-1 to white
     $("#text-area-9").addClass('present');
 
-} else if (timeNowInt < timeBlock4) {
+} else if (timeNowInt < timeOutOfBlock("#block-4")) {
     // change color of text-area-1 to green
     $("#text-area-9").addClass('future');
 
@@ -262,21 +339,6 @@ if (timeNowInt > timeBlock4) {
 //     $("#text-area-" + i).val(localStorage.getItem());
 
 // }
-
-
-// fieldInput();
-
-
-// button9.addEventListener('click' function ());
-// button10.addEventListener('click' function ());
-// button11.addEventListener('click' function ());
-// button12.addEventListener('click' function ());
-// button1.addEventListener('click' function ());
-// button2.addEventListener('click' function ());
-// button3.addEventListener('click' function ());
-// button4.addEventListener('click' function ());
-// button5.addEventListener('click' function ());
-
 
 
 

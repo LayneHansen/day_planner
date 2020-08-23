@@ -59,3 +59,33 @@
 // $("btn3");
 // $("btn4");
 // $("btn5"); -->
+
+// TEXT FIELD VARIABLES
+
+// var field8Event = $('#text-area-1');
+// var field9Event = $('#text-area-2');
+// var field10Event = $('#text-area-3');
+// var field11Event = $('#text-area-4');
+// var field12Event = $('#text-area-5');
+// var field1Event = $('#text-area-6');
+// var field2Event = $('#text-area-7');
+// var field3Event = $('#text-area-8');
+// var field4Event = $('#text-area-9');
+
+
+// var timeNowInt = 7;
+// console.log(timeNowInt); 
+
+
+// TIME BLOCK variables
+
+// var timeBlock8 = parseInt($("#block-8").text().replace(/\D/g,));
+// var timeBlock9 = parseInt($("#block-9").text().replace(/\D/g,));
+// var timeBlock10 = parseInt($("#block-10").text().replace(/\D/g,));
+// var timeBlock11 = parseInt($("#block-11").text().replace(/\D/g,));
+// var timeBlock12 = parseInt($("#block-12").text().replace(/\D/g,));
+// var timeBlock1 = parseInt($("#block-1").text().replace(/\D/g,))+12;
+// var timeBlock2 = parseInt($("#block-2").text().replace(/\D/g,))+12;
+// var timeBlock3 = parseInt($("#block-3").text().replace(/\D/g,))+12;
+// var timeBlock4 = parseInt($("#block-4").text().replace(/\D/g,))+12;
+
